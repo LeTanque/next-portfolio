@@ -1,0 +1,38 @@
+
+
+.section__index {
+    background-image: url("/static/matthew-ronder-seid-xYd99V3S5aI-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    .block__greeting {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: $elansgrey;
+        @include anima-fadeIn;
+        strong {
+            font-size: 10vw;
+            text-shadow: 0 0 20px $licorice;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 10px;
+            @include anima-spaceOut;
+            span {
+                font-family: 'Cabin', sans-serif;
+                font-size: 5vw;
+                font-style: italic;
+                letter-spacing: 0;
+                animation: none;
+            }
+        }
+    }
+}
+
+
+
+
+

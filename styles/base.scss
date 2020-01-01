@@ -1,0 +1,26 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Cabin|Permanent+Marker|Roboto+Condensed:700&display=swap');
+
+
+
+// Vars and Mixins
+@import './global/_reset.scss';
+@import './global/_variables.scss';
+@import './global/_global.scss';
+@import './global/_inputs.scss';
+@import './global/_mixins.scss';
+
+@import './global/_transitions.scss';
+@import "./global/_animations.scss";
+
+
+// Views Here
+@import "./pages/index.scss";
+@import "./pages/projects.scss";
+@import "./pages/about.scss";
+
+
+
+// Components
+@import "./components/Nav.scss";
+

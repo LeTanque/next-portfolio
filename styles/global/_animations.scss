@@ -1,0 +1,18 @@
+
+
+
+
+@mixin anima-openUp($runtime: 800ms, $delay: 0s) {
+    animation: $runtime cubic-bezier(0.82, 0.15, 0.16, 1.29) $delay 1 openUp;
+}
+
+@mixin anima-fadeIn($runtime: 900ms, $delay: 0s) {
+    animation: $runtime ease-in-out $delay 1 fadeIn;
+}
+
+@mixin anima-spaceOut($runtime: 1.75s, $delay: 100ms) {
+    animation: $runtime cubic-bezier(0.8, 0, 0.75, 0.68) $delay 1 spaceOut;
+}
+
+
+

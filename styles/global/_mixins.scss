@@ -1,0 +1,24 @@
+@mixin buttonStyler($bgc, $textColor, $borderStyle, $margin: 8% 0) {
+    font-family: "Cabin", sans-serif;
+    font-size: 1.8rem;
+    background: $bgc;
+    color: $textColor;
+    margin: $margin;
+    padding: 1.6rem 2rem;
+    border-radius: 0.25rem;
+    border-width: 3px;
+    border-color: $textColor;
+    border-style: $borderStyle;
+    width: 11rem;
+    transition: 0.2s all ease-in-out;
+    user-select: none;
+    &:hover {
+        background-color: darken($bgc, 9%);
+        color: $textColor;
+        cursor: pointer;
+        border: 2px $borderStyle $bgc;
+    }
+    &:active {
+        transform: scale(0.98);
+    }
+}

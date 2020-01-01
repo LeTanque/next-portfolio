@@ -1,0 +1,121 @@
+::selection {
+    background: $fire;
+}
+
+html {
+    font-size: 62.5%;
+    background-color: $licorice;
+    color: $isabelline;
+}
+
+body {
+    background-color: $licorice;
+    color: $isabelline;
+    button:focus {
+        outline: none;
+    }
+}
+
+button {
+    font-family: 'Cabin', sans-serif;
+    border: none;
+    border-radius: 6px;
+    color: $licorice;
+    background: $pastegrey;
+    margin-right: 10px;
+    padding: 12px 15px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+a, svg[class^='link'], svg[class*=' link'] {
+    text-decoration: none;
+    font-size: 2.2rem;
+    color: inherit;
+    user-select: none;
+    cursor: pointer;
+}
+
+p, body, div, section {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.8rem;
+}
+
+i {
+    font-family: 'Permanent Marker', cursive;
+    font-style: italic;
+}
+
+b {
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+}
+
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 3.8rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+h4 {
+    font-size: 2.2rem;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 1.8rem;
+}
+
+hr {
+    width: 100%;
+    border: none;
+    border-top-color: $silver-lining;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.display-none {
+    display: none;
+}
+
+
+.tab {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+a svg, .link-icon svg {
+    &:hover {
+        color: lighten($fire, 20%);
+    }
+    &:focus,
+    &:active {
+        color: darken($fire, 20%);
+    }
+}
+
+
+li {
+    text-decoration: none;
+}
+
+
+

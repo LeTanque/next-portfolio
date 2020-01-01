@@ -1,0 +1,32 @@
+{
+  "name": "next-portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeTanque/next-portfolio.git"
+  },
+  "keywords": [],
+  "author": "Frank leTanque",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeTanque/next-portfolio/issues"
+  },
+  "homepage": "https://github.com/LeTanque/next-portfolio#readme",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "next": "^9.1.6",
+    "next-page-transitions": "^1.0.0-beta.2",
+    "node-sass": "^4.13.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-icons": "^3.8.0"
+  }
+}

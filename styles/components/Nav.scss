@@ -1,0 +1,35 @@
+
+
+.section__nav {
+    width: 100%;
+    padding: 25px 10px 10px 10px;
+    position: absolute;
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            a, svg {
+                padding: 0 10px;
+                font-size: 1.8rem;
+                color: $cosmic;
+            }
+        }
+    }
+    
+}
+
+
+.route-index nav li a, .route-index nav li svg {
+    color: $ambient-grey;
+}
+.route-about nav li a, .route-about nav li svg {
+    color: $cosmic;
+}
+.route-projects nav li a, .route-projects nav li svg {
+    color: $pastegrey;
+}

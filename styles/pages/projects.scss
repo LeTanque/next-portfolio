@@ -1,0 +1,85 @@
+
+
+.section__projects {
+    background-image: url("/static/bogomil-mihaylov-wVTLXWM-Gh0-unsplash.jpg");
+    background-size: cover;
+    background-position: left;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    .block__project-header {
+        padding: 75px 25px 25px 25px;
+        width: 100%;
+        color: $isabelline;
+        font-size: 2.4rem;
+        display: flex;
+        align-items: flex-end;
+        hr {
+            margin-left: 10px;
+        }
+    }
+    .section__project-list {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .block__tape {
+            background-color: hsla(0, 0%, 100%, 0.275);
+            box-shadow: inset 0 0 1em 0.5em rgba($black, 0.1), -3px 3px 35px -6px $licorice;
+            height: 80px;
+            width: 260px;
+            margin-bottom: 60px;
+            position: relative;
+            transform: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-filter: drop-shadow(0 1px 1px hsla(0, 0%, 0%, 0.3));
+            &::after, &::before {
+                content: '';
+                background-size: 8px 8px;
+                bottom: 0;
+                top: 0;
+                position: absolute;
+                width: 8px;
+                // width: 100%;
+            }
+            &::after {
+                background-image: linear-gradient(40deg, transparent 50%, rgba(255, 255, 255, 0.17) 50%), linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
+                background-position: 100% 100%;
+                left: -7.6px;
+            }
+            &::before {
+                background-image: linear-gradient(-70deg, transparent 50%, rgba(255, 255, 255, 0.17) 50%), linear-gradient(-45deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
+                background-position: 1px 102%;
+                right: -7px;
+            }
+            i {
+                color: $licorice;
+                font-size: 3.4rem;
+            }
+        }
+        .block__tape.project-one {
+            transform: rotate(-7.4deg) translate(-20%, 0%);
+            width: 433px;
+        }
+        .block__tape.project-two {
+            transform: rotate(2.3deg) translate(15%, 0%);
+            width: 433px;
+        }
+        .block__tape.project-three {
+            transform: rotate(0.25deg) translate(35%, 0%);
+            width: 433px;
+        }
+        .block__tape.project-four {
+            transform: rotate(6.35deg) translate(0%, 0%);
+            width: 433px;
+        }
+    }
+}
+
+

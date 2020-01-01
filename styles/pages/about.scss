@@ -1,0 +1,38 @@
+
+
+.section__about {
+    background-image: url("/static/felix-berger-C_J29bp8-4Y-unsplash.jpg");
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .block--about {
+        background-color: $licorice;
+        height: 33%;
+        width: 62%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        @include anima-openUp;
+        transform: skewX(12deg);
+        &::after {
+            content: '';
+            background-color: $fire;
+            transform: skewX(0deg);
+            width: 100px;
+            height: 100%;
+        }
+        p {
+            text-align: center;
+            padding: 20px;
+            font-size: 2.4rem;
+            transform: skewX(-12deg);
+            @include anima-fadeIn;
+        }
+    }
+}
+
+
