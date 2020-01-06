@@ -1,7 +1,7 @@
 
 
 .section__projects {
-    background-image: url("/static/bogomil-mihaylov-wVTLXWM-Gh0-unsplash.jpg");
+    background: linear-gradient(to bottom, $licorice 50%, $ambient-grey 100%);
     background-size: cover;
     background-position: left;
     width: 100%;
@@ -10,6 +10,8 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
     .block__project-header {
         padding: 75px 25px 25px 25px;
         width: 100%;
@@ -27,9 +29,13 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        padding-top: 50px;
+        @media #{$tablet} {
+            padding-top: 20px;
+        }
         .block__tape {
             background-color: hsla(0, 0%, 100%, 0.275);
-            box-shadow: inset 0 0 1em 0.5em rgba($black, 0.1), -3px 3px 35px -6px $licorice;
+            font-size: 3.4rem;
             height: 80px;
             width: 260px;
             margin-bottom: 60px;
@@ -39,6 +45,7 @@
             justify-content: center;
             align-items: center;
             -webkit-filter: drop-shadow(0 1px 1px hsla(0, 0%, 0%, 0.3));
+            @include boxShadowInnerOuter;
             &::after, &::before {
                 content: '';
                 background-size: 8px 8px;
@@ -58,25 +65,29 @@
                 background-position: 1px 102%;
                 right: -7px;
             }
+            @media #{$tablet} {
+                height: 60px;
+                width: 120px;
+                font-size: 2.4rem;
+            }
             i {
                 color: $licorice;
-                font-size: 3.4rem;
             }
         }
         .block__tape.project-one {
-            transform: rotate(-7.4deg) translate(-20%, 0%);
+            transform: rotate(-5.4deg) translate(-5%, 0%);
             width: 433px;
         }
         .block__tape.project-two {
-            transform: rotate(2.3deg) translate(15%, 0%);
+            transform: rotate(1.3deg) translate(5%, 0%);
             width: 433px;
         }
         .block__tape.project-three {
-            transform: rotate(0.25deg) translate(35%, 0%);
+            transform: rotate(0.25deg) translate(15%, 0%);
             width: 433px;
         }
         .block__tape.project-four {
-            transform: rotate(6.35deg) translate(0%, 0%);
+            transform: rotate(3.35deg) translate(0%, 0%);
             width: 433px;
         }
     }

@@ -1,53 +1,59 @@
+// Variables
+$transitionSettings: height ease-in-out 400ms, filter ease-in 500ms;
+
+// Mixin
+@mixin pageTransitionSettings($opacity: 0.8, $height: 100vh, $transition: $transitionSettings, $filter: blur(12px), $background: $black) {
+    transition: $transition;
+    filter: $filter;
+    -webkit-filter: $filter;
+    &::after {
+        width: 100vw;
+        height: $height;
+        
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        
+        position: absolute;
+        
+        background-color: $background;
+        background-attachment: fixed;
+        
+        opacity: $opacity;
+        filter: $filter;
+        -webkit-filter: $filter;
+        
+        transition: $transition;
+        content: "";
+        z-index: 60;
+    }
+}
+
+
 
 .page-transition-enter {
-    opacity: 0;
+    // opacity: 0;
+    @include pageTransitionSettings($height: 100vh);
 }
+
 .page-transition-enter-active {
-    opacity: 1;
-    transition: opacity 300ms;
+    @include pageTransitionSettings($height: 0vh, $filter: blur(0px));
 }
+
+// .page-transition-enter-done {
+//     // opacity: 1;
+//     @include pageTransitionSettings($opacity: 1, $height: 100vh, $filter: blur(4px), $background: $black);
+// }
+
+
 .page-transition-exit {
-    opacity: 1;
+    // opacity: 1;
+    @include pageTransitionSettings($height: 0vh, $filter: blur(0px));
 }
+
 .page-transition-exit-active {
-    opacity: 0;
-    transition: opacity 300ms;
-}
-
-
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 0.1;
-    }
-    50% {
-        opacity: 0.25;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes openUp {
-    0% {
-        height: 0%;
-    }
-    100% {
-        height: 33%;
-    }
-}
-
-
-@keyframes spaceOut {
-    0% {
-        letter-spacing: -10px;
-    }
-    100% {
-        letter-spacing: 10px;
-    }
+    // opacity: 0;
+    
+    @include pageTransitionSettings($height: 100vh, $filter: blur(4px));
 }
 
 

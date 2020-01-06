@@ -1,0 +1,59 @@
+
+
+.block__box-item {
+    width: 30%;
+    display: inline-block;
+    margin-top: 2rem;
+    filter: grayscale(100%);
+    &:hover {
+        filter: none;
+        transform: scale(1, 1) rotate(0deg) !important;
+        transition: all 0.35s;
+    }
+    .polaroid {
+        background: $white;
+        padding: 1rem;
+        min-width: 240px;
+        box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            transition: all 0.35s;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .caption {
+            font-size: 1.8rem;
+            font-family: $cursive-font;
+            text-align: center;
+            line-height: 2;
+            color: $licorice;
+        }
+    }
+    .block__view-more-container {
+        display: flex;
+        justify-content: flex-end;
+        .polaroid--view-more {
+            font-size: 3rem;
+            color: $black;
+        }
+    }
+}
+
+.block__box-item:hover .polaroid:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transform: rotate(0deg);
+    height: 90%;
+    width: 90%;
+    bottom: 0%;
+    right: 5%;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    transition: all 0.35s;
+}
+
+

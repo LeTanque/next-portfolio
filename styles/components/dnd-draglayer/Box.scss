@@ -1,0 +1,22 @@
+
+
+
+
+.block__box {
+    // border: 1px dashed $mirage;
+    // background-color: $licorice;
+    // color: $white;
+    // padding: 20px;
+    cursor: move;
+}
+
+
+
+.block__box-drag-preview {
+    display: inline-block;
+    transform: rotate(-7deg);
+    -webkit-transform: rotate(-7deg);
+}
+
+
+

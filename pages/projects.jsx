@@ -1,4 +1,6 @@
+// import ProgressiveImage from "react-progressive-image-loading";
 
+import ProjectsBody from "../components/ProjectsBody";
 
 
 
@@ -7,45 +9,29 @@
 const Projects = () => (
     <>
 
-        <section className="section__projects">
 
-
-
-            <div className="block__project-header">
-                <h3>Projects</h3>
-                <hr/>
-            </div>
-
-            <section className="section__project-list">
-
-                <div className="block__tape project-one">
-                    <i>My first project</i>
-                </div>
-
-                <div className="block__tape project-two">
-                    <i>My second project</i>
-                </div>
-
-                <div className="block__tape project-three">
-                    <i>My third project</i>
-                </div>
-
-                <div className="block__tape project-four">
-                    <i>My fourth project</i>
-                </div>
-
-
-
-            </section>
-
-            
-
+        <section className="section__projects" >
+            <ProjectsBody />
         </section>
+
+        {/* <ProgressiveImage
+            preview="/static/bogomil-mihaylov-small.jpg"
+            src="/static/bogomil-mihaylov-wVTLXWM-Gh0-unsplash.jpg"
+            transitionTime={800}
+            transitionFunction="ease"
+            render={(src, style) => (
+                <section className="section__projects" style={Object.assign(style, { backgroundImage: `url(${src})` })} >
+                    {style.filter === "blur(0px)" ? (
+                        <ProjectsBody />
+                    ) : null}
+                </section>
+            )}
+        /> */}
     
     
     </>
 );
 
 
-export default Projects
+export default Projects;
 

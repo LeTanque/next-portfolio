@@ -4,6 +4,7 @@
     width: 100%;
     padding: 25px 10px 10px 10px;
     position: absolute;
+    z-index: 50;
     
     nav {
         display: flex;
@@ -13,23 +14,34 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            a, svg {
-                padding: 0 10px;
-                font-size: 1.8rem;
-                color: $cosmic;
+            text-decoration: none;
+            margin: 0 20px 20px 20px;
+            padding: 0 10px;
+            @include navLink();
+            a {
+                text-transform: lowercase;
+                font-size: 1.2rem;
+            }
+            .link-icon {
+                font-size: 2.4rem;
             }
         }
     }
-    
 }
 
-
-.route-index nav li a, .route-index nav li svg {
+.section__nav.route-index nav li {
     color: $ambient-grey;
 }
-.route-about nav li a, .route-about nav li svg {
-    color: $cosmic;
-}
-.route-projects nav li a, .route-projects nav li svg {
+.section__nav.route-projects nav li {
     color: $pastegrey;
 }
+.section__nav.route-skills nav li {
+    color: $isabelline;
+}
+.section__nav.route-game nav li {
+    color: $mirage;
+}
+.section__nav.route-unknown nav li {
+    color: $silver-lining;
+}
+

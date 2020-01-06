@@ -1,19 +1,27 @@
 import React from "react";
 import Head from "next/head";
 import App from "next/app";
+import loadable from '@loadable/component';
 
-import Nav from "../components/Nav";
+const Nav = loadable(() => import('../components/Nav'));
+// const Footer = loadable(() => import('../components/Footer'));
+const Loading = loadable(() => import('../components/Loading'));
 
 import { PageTransition } from "next-page-transitions";
 
 import "../styles/base.scss";
 
-// import { ApolloProvider } from "@apollo/react-hooks";
-// import { withApollo } from "../lib/apollo";
 
+// The progress spinner is hurting the snappiness of the transitions
+// import NProgress from "nprogress";
+// import Router from "next/router";
+// Router.events.on('routeChangeStart', () => {
+//     NProgress.start()
+// })
+// Router.events.on('routeChangeComplete', () => NProgress.done())
+// Router.events.on('routeChangeError', () => NProgress.done())
 
-
-class MyApp extends App {
+export default class MyApp extends App {
     // static async getInitialProps({ Component, router, ctx }) {
     //   let pageProps = {}
     //   if (Component.getInitialProps) {
@@ -25,6 +33,7 @@ class MyApp extends App {
 
     render() {
         const { Component, pageProps, router } = this.props;
+        const timeout = 400;
 
         return (
             <>
@@ -35,9 +44,23 @@ class MyApp extends App {
 
 
                 <Nav {...pageProps} route={router.route} />
-                <PageTransition timeout={333} classNames="page-transition">
+
+                <PageTransition
+                    timeout={timeout}
+                    classNames="page-transition"
+                    loadingClassNames="spinner-icon"
+                    loadingComponent={<Loading />}
+                    loadingDelay={500}
+                    loadingTimeout={{
+                        enter: timeout,
+                        exit: 0,
+                    }}
+                >
                     <Component {...pageProps} key={router.route} />
                 </PageTransition>
+
+
+
             </>
         );
     }
@@ -47,4 +70,4 @@ class MyApp extends App {
 
 // Wraps all components in the tree with the data provider
 // export default withApollo(MyApp);
-export default MyApp;
+

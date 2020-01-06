@@ -2,16 +2,51 @@
 
 
 
-@mixin anima-openUp($runtime: 800ms, $delay: 0s) {
+// Animation mixins
+@mixin anima-openUp($runtime: 600ms, $delay: 0s) {
     animation: $runtime cubic-bezier(0.82, 0.15, 0.16, 1.29) $delay 1 openUp;
 }
 
-@mixin anima-fadeIn($runtime: 900ms, $delay: 0s) {
-    animation: $runtime ease-in-out $delay 1 fadeIn;
+@mixin anima-fadeIn($runtime: 600ms, $delay: 0s) {
+    animation: $runtime ease-out $delay 1 fadeIn;
 }
 
 @mixin anima-spaceOut($runtime: 1.75s, $delay: 100ms) {
-    animation: $runtime cubic-bezier(0.8, 0, 0.75, 0.68) $delay 1 spaceOut;
+    animation-duration: $runtime;
+    animation-timing-function: cubic-bezier(0.8, 0, 0.75, 0.68);
+    animation-delay: $delay;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-name: spaceOut;
+}
+
+@mixin anima-bigScroll($runtime: 20s, $delay: 0s, $aniname: bigScroll) {
+    animation-duration: $runtime;
+    animation-delay: $delay;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+    animation-timing-function: linear;
+    animation-name: $aniname;
+}
+
+@mixin anima-scrollLeft($runtime: 20s, $delay: 0s, $aniname: scrollLeft) {
+    animation-duration: $runtime;
+    animation-delay: $delay;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+    animation-timing-function: linear;
+    animation-name: $aniname;
+}
+
+@mixin anima-scrollLeft($runtime: 3s, $delay: 0s, $aniname: moveBackgroundPosition) {
+    animation-duration: $runtime;
+    animation-delay: $delay;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+    animation-name: $aniname;
 }
 
 

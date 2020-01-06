@@ -1,7 +1,7 @@
 
 
 input {
-    font-family: 'Cabin', sans-serif;
+    font-family: $body-font;
     font-size: 1.6rem;
     padding: 10px 15px;
     outline: none;
@@ -12,7 +12,7 @@ input {
 }
 
 textarea {
-    font-family: 'Cabin', sans-serif;
+    font-family: $body-font;
     font-size: 1.6rem;
     padding: 10px 15px;
     margin: 10px 0 0;
@@ -22,7 +22,7 @@ textarea {
 }
 
 select {
-    font-family: 'Cabin', sans-serif;
+    font-family: $body-font;
     font-size: 1.6rem;
     border-radius: 5px;
     border: 1px solid $mirage;

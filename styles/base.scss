@@ -6,11 +6,15 @@
 // Vars and Mixins
 @import './global/_reset.scss';
 @import './global/_variables.scss';
+@import "./global/_fonts.scss";
 @import './global/_global.scss';
+@import './global/_buttons.scss';
 @import './global/_inputs.scss';
 @import './global/_mixins.scss';
 
+@import './global/_nprogress.scss';
 @import './global/_transitions.scss';
+@import "./global/_keyframes.scss";
 @import "./global/_animations.scss";
 
 
@@ -18,9 +22,27 @@
 @import "./pages/index.scss";
 @import "./pages/projects.scss";
 @import "./pages/about.scss";
+@import "./pages/skills.scss";
 
 
 
 // Components
+@import "./components/DragAndDropBody.scss";
+@import "./components/Footer.scss";
+@import "./components/Loading.scss";
 @import "./components/Nav.scss";
+@import "./components/Polaroid.scss";
+@import "./components/TextLoop.scss";
+
+@import "./components/dnd-dropzone/Dustbin.scss";
+@import "./components/dnd-dropzone/Box.scss";
+
+@import "./components/dnd-draglayer/CustomDragLayer.scss";
+@import "./components/dnd-draglayer/Container.scss";
+@import "./components/dnd-draglayer/Box.scss";
+@import "./components/dnd-draglayer/Draglayer.scss";
+
+@import "./components/threejs-render/ThreeContainer.scss";
+
+
 

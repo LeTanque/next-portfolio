@@ -13,8 +13,18 @@ $snow-white: #fff;
 $licorice: #111111;
 $cosmic: #33337f;
 $fire: #cc282b;
+$ember: #d18485;
 $pastegrey: #cccccc;
 $isabelline: #eeeeee;
+
+
+// Font color pointers
+.cfont-licorice { color: $licorice } 
+.cfont-cosmic { color: $cosmic } 
+.cfont-fire { color: $fire } 
+.cfont-ember { color: $ember } 
+.cfont-pastegrey { color: $pastegrey } 
+.cfont-isabelline { color: $isabelline } 
 
 
 //media queries

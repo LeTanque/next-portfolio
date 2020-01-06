@@ -1,0 +1,19 @@
+
+
+.block__boxes {
+    overflow: hidden;
+    clear: both;
+    display: flex;
+    justify-content: center;
+    .block__box {
+        border: 1px dashed $mirage;
+        background-color: $licorice;
+        color: $isabelline;
+        padding: 15px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        cursor: move;
+        float: left;
+    }
+}
+

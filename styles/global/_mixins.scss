@@ -1,5 +1,5 @@
 @mixin buttonStyler($bgc, $textColor, $borderStyle, $margin: 8% 0) {
-    font-family: "Cabin", sans-serif;
+    font-family: $title-font;
     font-size: 1.8rem;
     background: $bgc;
     color: $textColor;
@@ -22,3 +22,47 @@
         transform: scale(0.98);
     }
 }
+
+@mixin boxShadowInnerOuter() {
+    box-shadow: inset 0 0 1em 0.5em rgba($black, 0.1), -3px 3px 10px -12px $licorice;
+}
+
+@mixin boxShadowOuter() {
+    box-shadow: -3px 3px 15px -3px $licorice;
+}
+
+@mixin navLinkText($fontSize: 4.2rem) {
+    font-size: $fontSize;
+    opacity: 0.2;
+    text-decoration: none;
+    color: inherit;
+    user-select: none;
+    transition: opacity 2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.75;
+        color: inherit;
+        transition: opacity 1.2s ease-in-out;
+    }
+}
+
+@mixin navLink() {
+    opacity: 0.4;
+    text-decoration: none;
+    user-select: none;
+    transition: opacity 2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+        color: inherit;
+        transition: opacity 1.2s ease-in-out;
+    }
+}
+
+@mixin foggyLetters() {
+    color: rgba(255, 255, 255, 0.01);
+    text-shadow: 0 0 50px $mirage;
+}
+
+
+

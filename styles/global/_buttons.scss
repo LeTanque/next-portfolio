@@ -1,0 +1,35 @@
+
+
+
+button, button.button, .button {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: $body-font;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: $white;
+
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: linear-gradient(
+        -45deg,
+        $ember 0 calc(50% - 10px),
+        $white calc(50% - 10px) calc(50% + 10px),
+        $fire calc(50% + 10px) 100%
+    );
+    background-size: 250% 100%;
+    background-position: 100% 50%;
+    
+    transition: 0.5s all;
+
+    &:hover, &:focus {
+        background-position: 0% 50%;
+        transition: 0.5s all;
+        cursor: pointer;
+    }
+}
+

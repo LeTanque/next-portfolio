@@ -1,0 +1,63 @@
+// const withPlugins = require('next-compose-plugins');
+const gimmeDaSass = require("@zeit/next-sass");
+const hazCss = require("@zeit/next-css");
+
+
+
+// // next.js configuration
+// const nextConfig = {
+//   // useFileSystemPublicRoutes: true,
+//   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+//     config.module.rules.push({
+//       test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+//       use: {
+//         loader: "url-loader",
+//         options: {
+//           limit: 1000000
+//         }
+//       }
+//     });
+//     return config
+//   },
+// };
+
+// // Export with compose plugins
+// module.exports = withPlugins([
+//   [hazCss, {
+//     cssModules: true
+//   }],
+//   [gimmeDaSass, {
+//     cssModules: true,
+//     cssLoaderOptions: {
+//       importLoaders: 1,
+//       localIdentName: '[local]___[hash:base64:5]'
+//     },
+//     sassLoaderOptions: {
+//       includePaths: ["./styles"],
+//       file: "base.scss"
+//     },
+//   }],
+// ], nextConfig)
+
+
+module.exports = hazCss(gimmeDaSass({
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+      use: {
+        loader: "url-loader",
+        options: {
+          limit: 1000000
+        }
+      }
+    });
+
+    return config;
+  }}
+));
+
+
+
+// module.exports = withTM({
+//   transpileModules: ['resize-observer']
+// });
