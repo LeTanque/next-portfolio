@@ -26,7 +26,8 @@
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     animation-play-state: running;
-    animation-timing-function: linear;
+    // animation-timing-function: linear;
+    animation-timing-function: cubic-bezier(0.57, 0.32, 0.62, 0.78);
     animation-name: $aniname;
 }
 
@@ -40,7 +41,7 @@
     animation-name: $aniname;
 }
 
-@mixin anima-scrollLeft($runtime: 3s, $delay: 0s, $aniname: moveBackgroundPosition) {
+@mixin anima-moveBackgroundPosition($runtime: 3s, $delay: 0s, $aniname: moveBackgroundPosition) {
     animation-duration: $runtime;
     animation-delay: $delay;
     animation-iteration-count: infinite;

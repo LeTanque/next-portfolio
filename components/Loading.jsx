@@ -1,6 +1,6 @@
 
 
-const Loading = () => {
+const Loading = props => {
 
   return (
     <section className="section__loading"></section>

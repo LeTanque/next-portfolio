@@ -1,8 +1,5 @@
 // import ProgressiveImage from "react-progressive-image-loading";
-
 import ProjectsBody from "../components/ProjectsBody";
-
-
 
 
 

@@ -1,41 +1,9 @@
 
 
-// html,
-// body,
-// #root {
-//     width: 100%;
-//     height: 100%;
-//     margin: 0;
-//     padding: 0;
-//     background-color: $licorice;
-//     -webkit-touch-callout: none;
-//     -webkit-user-select: none;
-//     -khtml-user-select: none;
-//     -moz-user-select: none;
-//     -ms-user-select: none;
-//     user-select: none;
-//     overflow: hidden;
-// }
-
-// #root {
-//     overflow: auto;
-// }
-
-// body {
-//     position: fixed;
-//     overflow: hidden;
-//     overscroll-behavior-y: none;
-//     font-family: $body-font;
-//     color: $black;
-//     -webkit-font-smoothing: antialiased;
-// }
-
-.block__three-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.container.block__three-container {
+    // See the Canvas invocation for inline styles
     color: $isabelline;
-    overflow: hidden;
+    z-index: -1;
 }
 
 span.header {
@@ -72,17 +40,6 @@ span.header-left {
 div.header-major > span {
     font-size: 10em;
 }
-
-// a,
-// .main > span {
-//   font-family: $body-font;
-//   font-size: 1.8rem;
-//   color: inherit;
-//   position: absolute;
-//   display: inline;
-//   text-decoration: none;
-//   z-index: 1;
-// }
 
 .main > span {
     z-index: 0;

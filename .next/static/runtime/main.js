@@ -7607,7 +7607,7 @@ var _prerenderIndicator = _interopRequireDefault(__webpack_require__(/*! ./dev/p
 // The runtimeChunk can't hot reload itself currently to correct it when adding pages using on-demand-entries
 
 
-__webpack_require__.e(/*! import() */ 2).then(__webpack_require__.t.bind(null, /*! ./dev/noop */ "./node_modules/next/dist/client/dev/noop.js", 7)); // Support EventSource on Internet Explorer 11
+__webpack_require__.e(/*! import() */ 1).then(__webpack_require__.t.bind(null, /*! ./dev/noop */ "./node_modules/next/dist/client/dev/noop.js", 7)); // Support EventSource on Internet Explorer 11
 
 if (!window.EventSource) {
   window.EventSource = _eventSourcePolyfill["default"];

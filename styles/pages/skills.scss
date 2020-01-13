@@ -6,8 +6,8 @@
 
 
 .section__skills {
-    background-size: cover;
-    background-position: center;
+    // background-size: cover;
+    // background-position: center;
     width: 100%;
     height: 100vh;
     margin: 0 auto;
@@ -16,6 +16,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
     // .block__skill-icons {
     //     display: grid;
     //     grid-template-columns: repeat(7, auto);
@@ -33,6 +35,52 @@
     //         font-size: 2rem;
     //     }        
     // }
+    .block__skills-bottom {
+        z-index: 20;
+        width: 100%;
+        top: 60vh;
+        position: relative;
+        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p.p__text-block {
+            width: 800px;
+        }
+        .block__level {
+            width: 100vw;
+            // height: 100%;
+            padding: 20px 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .block__level.tint {
+            &:after {
+                content: '';
+                background-color: rgba(0, 0, 0, 0.5);
+                opacity: 1;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                position: absolute;
+                z-index: -2;
+            }
+        }
+        // .block__slanted {
+        //     &:before {
+        //         content: '';
+        //         background-color: darkred;
+        //         height: 20px;
+        //         width: 100vw;
+        //         transform: rotate(0deg) skew(0deg) translate(0, 20px);
+        //         display: block;
+        //         position: fixed;
+        //         bottom: 0px;
+        //     }
+        // }
+    }
 }
 
 

@@ -29,31 +29,34 @@ $transitionSettings: height ease-in-out 800ms, filter ease-in 800ms;
 }
 
 
-
-.page-transition-enter {
-    // opacity: 0;
+// Slide
+.page-transition-slide-enter {
     @include pageTransitionSettings($height: 100vh);
 }
 
-.page-transition-enter-active {
+.page-transition-slide-enter-active {
     @include pageTransitionSettings($height: 0vh, $filter: blur(0px));
 }
 
-// .page-transition-enter-done {
+// .page-transition-slide-enter-done {
 //     // opacity: 1;
 //     @include pageTransitionSettings($opacity: 1, $height: 100vh, $filter: blur(4px), $background: $black);
 // }
 
-
-.page-transition-exit {
-    // opacity: 1;
+.page-transition-slide-exit {
     @include pageTransitionSettings($height: 0vh, $filter: blur(0px));
 }
 
-.page-transition-exit-active {
-    // opacity: 0;
-    
+.page-transition-slide-exit-active {
     @include pageTransitionSettings($height: 100vh, $filter: blur(4px));
 }
+
+
+// None
+.page-transition-none-enter { opacity: 1 }
+.page-transition-none-enter-active { opacity: 1 }
+.page-transition-slide-enter-done { opacity: 1 }
+.page-transition-none-exit { opacity: 1 }
+.page-transition-none-exit-active { opacity: 1 }
 
 

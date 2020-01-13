@@ -36,12 +36,10 @@ const Nav = props => {
       setCurrentNavLocation("index");
     } else if (props && props.route === "/skills") {
       setCurrentNavLocation("skills");
-    } // else if (props && props.route === "/projects") {
-    //     setCurrentNavLocation("projects")
+    } // else if (props && props.route === "/project/game") {
+    //     setCurrentNavLocation("game")
     // } 
-    else if (props && props.route === "/project/game") {
-        setCurrentNavLocation("game");
-      } else {
+    else {
         setCurrentNavLocation("unknown");
       }
 
@@ -51,94 +49,68 @@ const Nav = props => {
     className: `section__nav route-${currentNavLocation}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 34
     },
     __self: undefined
   }, __jsx("nav", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 35
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 36
     },
     __self: undefined
   }, __jsx("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 37
     },
     __self: undefined
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaHome"], {
     className: "link-icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 38
     },
     __self: undefined
   }), __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 39
     },
     __self: undefined
   }, "Home"))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/skills",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 43
     },
     __self: undefined
   }, __jsx("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 44
     },
     __self: undefined
   }, __jsx(react_icons_gi__WEBPACK_IMPORTED_MODULE_3__["GiTechnoHeart"], {
     className: "link-icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 45
     },
     __self: undefined
   }), __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 46
     },
     __self: undefined
-  }, "Skills"))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/project-gallery",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: undefined
-  }, __jsx("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: undefined
-  }, __jsx(react_icons_gi__WEBPACK_IMPORTED_MODULE_3__["GiGamepad"], {
-    className: "link-icon",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: undefined
-  }), __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: undefined
-  }, "Project Gallery")))));
+  }, "Skills")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Nav);

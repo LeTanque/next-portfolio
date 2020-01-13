@@ -1,20 +1,16 @@
 import React, {
-    // useCallback,
-    // useEffect,
     useRef,
-    // useState,
-    useMemo
+    useMemo,
+    useEffect
 } from "react";
 import * as THREE from "three";
 import {
     Canvas,
     extend as extendThree,
     useFrame,
-    // useLoader,
     useResource,
     useThree
 } from "react-three-fiber";
-// import { useSpring, a } from 'react-spring/three';
 
 // Import and register postprocessing classes as three-native-elements for react-three-fiber
 // They'll be available as native elements <effectComposer /> from then on ...
@@ -22,8 +18,6 @@ import { EffectComposer } from "./resources/postprocessing/EffectComposer";
 import { RenderPass } from "./resources/postprocessing/RenderPass";
 import { GlitchPass } from "./resources/postprocessing/GlitchPass";
 extendThree({ EffectComposer, RenderPass, GlitchPass });
-
-import TextLoop from "../TextLoop";
 
 
 // Cast the lighting
@@ -37,52 +31,19 @@ const Lighting = () => {
 
     return (
         <>
-            {/* <pointLight 
-                ref={light}  
-                color="#ff0000" 
-                position={[ -2, 0, 60 ]}  
-                distance={0}  
-                intensity={1.5} 
-                decay={2}
-            /> */}
-            {/* <spotLight 
-                ref={light}  
-                color="#ff0000" 
-                position={[ -2, 0, 60 ]}  
-                distance={0}  
-                angle={1.05}
-                intensity={1.5} 
-                decay={2}
-            /> */}
-            
             <directionalLight
                 ref={light} 
-                // position={[ -2, 0, 60 ]}  
-                intensity={1.1}  
-                color="#eeeeee" 
+                intensity={1.2}  
+                color="#fefefe" 
             /> 
            
         </>
     );
 };
 
-// // This renders text via canvas and projects it as a sprite
-// const Text = ({ opacity, color = 'white', fontSize = 410 }) => {
-//     return (
-//         <a.sprite scale={[ 1, 1, 1 ]} >
-//             <a.spriteMaterial attach="material" transparent opacity={opacity}>
-//                 <canvasTexture attach="map"   premultiplyAlpha   />
-//             </a.spriteMaterial>
-//         </a.sprite>
-//     )
-// }
-
 // The canvas houses this function, the scene. Scene is where the elements come together.
 const SmokePuff = ({ geometry, material }) => {
     let smokePuffRef = useRef();
-    // let tenToHundred = Math.random() * 100; // 10 - 99.99
-    // let speed = 0.01 + Math.random() / 200; // 0.1 - 0.19
-    // const cosWave = (Math.cos(tenToHundred) / 3) - 1.1;  // a cosign wave.  ~ 0.5 - 1.5
     let factor = 1 + Math.random() * 2;  // ~ 1-3
     let xFactor = -250 + Math.random() * 350;  // -250 - 250
     let yFactor = -150 + Math.random() * 175;  // -150 - 75
@@ -92,8 +53,6 @@ const SmokePuff = ({ geometry, material }) => {
     let randomFactor = getRandomArbitrary(1.1, 2);
     
     useFrame(({ clock }) => {
-        // tenToHundred += speed; // tenToHundred = tenToHundred + speed, plus it sets a unique new version of tenToHundred.
-        // let delta = clock.getDelta();  // Change in clock. Something like 0.0001 - 0.0099
         let slowRotation = ((clock.elapsedTime * (0.017)) * randomFactor) + xFactor;  // starts at ~0.0001 + xFactor and goes slow
         let slowGrowth = (Math.tanh(clock.elapsedTime / 18) + 3);
 
@@ -121,6 +80,7 @@ const GenerateSmoke = () => {
                 attach="geometry"   
                 args={[200, 200]}
             />
+
             <meshLambertMaterial 
                 ref={materialRef}
                 attach="material" 
@@ -145,12 +105,20 @@ const GenerateSmoke = () => {
 }
 
 // This is the canvas. It's the lowest level element in the three/webGl chain
-const CanvasicalSmoke = () => {
+const CanvasicalSmoke = props => {
+    const { canvas, setCanvas } = props;
+    
+    useEffect(() => {
+        if (!canvas.loaded) {
+            setCanvas({ loaded: true })
+        }
+    }, [props])
 
     return (
         <>
             <Canvas
                 className="container block__three-container"
+                style={{ position: "fixed", width: "100vw", height: "100%", overflow: "hidden" }}
                 camera={{
                     fov: 75,
                     aspect: 0.5,
@@ -159,10 +127,14 @@ const CanvasicalSmoke = () => {
                     position: [0, 0, 400]
                 }}
             >
-                <Lighting />
-                <GenerateSmoke />
+                {canvas.loaded ? (
+                    <>
+                        <Lighting />
+                        <GenerateSmoke />
+                    </>
+                ) : null}
             </Canvas>
-            <TextLoop  />
+            
         </>
     );
 };

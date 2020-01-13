@@ -121,7 +121,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -139,62 +139,254 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _loadable_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @loadable/component */ "@loadable/component");
 /* harmony import */ var _loadable_component__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_loadable_component__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_page_transitions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-page-transitions */ "next-page-transitions");
-/* harmony import */ var next_page_transitions__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_page_transitions__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/tank/git/Portfolio/next-portfolio/pages/skills.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const Loading = _loadable_component__WEBPACK_IMPORTED_MODULE_1___default()(() => __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../components/Loading */ "./components/Loading.jsx")));
-const CanvasicalSmoke = _loadable_component__WEBPACK_IMPORTED_MODULE_1___default()(() => __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../components/threejs-render/CanvasicalSmoke */ "./components/threejs-render/CanvasicalSmoke.jsx"))); // import ThreeContainer from "../components/threejs-render/ThreeContainer";
-// import SmokeContainer from "../components/threejs-render/SmokeContainer";
-// import Canvasical from "../components/threejs-render/Canvasical";
+const CanvasicalSmoke = _loadable_component__WEBPACK_IMPORTED_MODULE_1___default()(() => __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../components/threejs-render/CanvasicalSmoke */ "./components/threejs-render/CanvasicalSmoke.jsx")));
+const TextLoop = _loadable_component__WEBPACK_IMPORTED_MODULE_1___default()(() => __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../components/TextLoop */ "./components/TextLoop.jsx")));
 
 const Skills = () => {
-  const timeout = 1200;
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_page_transitions__WEBPACK_IMPORTED_MODULE_2__["PageTransition"], {
-    timeout: timeout,
-    classNames: "page-transition",
-    loadingClassNames: "spinner-icon",
-    loadingComponent: __jsx(Loading, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: undefined
-    }),
-    loadingDelay: 0,
-    loadingTimeout: {
-      enter: timeout,
-      exit: 0
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, __jsx("section", {
+  const {
+    0: canvas,
+    1: setCanvas
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    loaded: false
+  });
+  const rightSlant = {
+    backgroundColor: "#1e1e1e",
+    height: "300px",
+    width: "100vw",
+    position: "absolute",
+    marginTop: "150px",
+    transform: "rotate(6deg) skew(6deg) translate(0, 0px)",
+    opacity: 1,
+    zIndex: -1
+  };
+  const leftSlant = {
+    backgroundColor: "#1e1e1e",
+    height: "200px",
+    width: "70vw",
+    position: "relative",
+    top: "200px",
+    transform: "matrix3d(1.5,0,0.00,0.0025,0.00,0.94,0.34,-0.000,0,-0.34,0.94,0,0,0,0,1)",
+    opacity: 1,
+    zIndex: -1
+  };
+  const levelBlock = {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    width: "100vw",
+    position: "relative",
+    opacity: 1,
+    zIndex: -1
+  };
+  const levelBlockClear = {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "rgba(0,0,0,0.2)",
+    width: "100vw",
+    position: "relative",
+    opacity: 1,
+    zIndex: -1
+  };
+  const levelBlockOpaque = {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#1e1e1e",
+    width: "100vw",
+    position: "relative",
+    opacity: 1,
+    zIndex: -1
+  };
+  return __jsx("section", {
     className: "section__skills",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 62
     },
     __self: undefined
   }, __jsx(CanvasicalSmoke, {
+    canvas: canvas,
+    setCanvas: setCanvas,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 63
     },
     __self: undefined
-  }))));
+  }), __jsx(TextLoop, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: undefined
+  }), __jsx("div", {
+    className: "block__skills-bottom",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "block__slanted",
+    style: rightSlant,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }, " "), __jsx("div", {
+    className: "",
+    style: leftSlant,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: undefined
+  }, " "), __jsx("div", {
+    className: "block__level tint",
+    style: {
+      marginTop: "20px"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit.")), __jsx("div", {
+    className: "block__level",
+    style: levelBlockClear,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit.")), __jsx("div", {
+    className: "block__level",
+    style: levelBlockOpaque,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
+    className: "p__text-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: undefined
+  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."))));
+};
+
+Skills.getInitialProps = async function () {
+  return {
+    transitionType: 'slide',
+    timeout: 800
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Skills);
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!********************************!*\
   !*** multi ./pages/skills.jsx ***!
   \********************************/
@@ -489,17 +681,6 @@ module.exports = require("core-js/library/fn/symbol/to-primitive");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/weak-map");
-
-/***/ }),
-
-/***/ "next-page-transitions":
-/*!****************************************!*\
-  !*** external "next-page-transitions" ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next-page-transitions");
 
 /***/ }),
 
