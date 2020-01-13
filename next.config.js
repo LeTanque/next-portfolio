@@ -20,13 +20,6 @@ module.exports = withPlugins([
             });
             return config;
         },
-        // webpack(config, options) {
-        //     const eslintRule = {
-        //         // omitted for brevity
-        //     };
-        //     config.module.rules.unshift(eslintRule);
-        //     return config;
-        // }}
     }),
     withCSS, 
     withSass, 
