@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -123,30 +123,22 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/tank/git/Portfolio/next-portfolio/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+ // import { useState, useEffect } from "react";
 
+const Index = () => {
+  // const [ state, setState ] = useState({ loaded: false })
+  const scrollerClassNames = ["scroller-top", "scroller-middle", "scroller-bottom"]; // useEffect(() => {
+  //     setTimeout(() => {
+  //         props.pageTransitionReadyToEnter()
+  //         setState({ loaded: true })
+  //       }, 2000)
+  // }, [])
+  // if (!state.loaded) return null;
 
-
-const Index = props => {
-  const {
-    0: state,
-    1: setState
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    loaded: false
-  });
-  const scrollerClassNames = ["scroller-top", "scroller-middle", "scroller-bottom"];
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    setTimeout(() => {
-      props.pageTransitionReadyToEnter();
-      setState({
-        loaded: true
-      });
-    }, 2000);
-  }, []);
-  if (!state.loaded) return null;
   return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(react_progressive_image_loading__WEBPACK_IMPORTED_MODULE_2___default.a, {
     preview: "/static/matthew-ronder-seid-small.jpg",
-    src: "/static/matthew-ronder-seid-xYd99V3S5aI-unsplash.jpg",
-    transitionTime: 400,
+    src: "/static/matthew-ronder-seid-xYd99V3S5aI-unsplash-medium.jpg",
+    transitionTime: 200,
     transitionFunction: "ease",
     render: (src, style) => __jsx("section", {
       className: "section__index",
@@ -211,7 +203,7 @@ const Index = props => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

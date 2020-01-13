@@ -1,5 +1,5 @@
 // Variables
-$transitionSettings: height ease-in-out 400ms, filter ease-in 500ms;
+$transitionSettings: height ease-in-out 800ms, filter ease-in 800ms;
 
 // Mixin
 @mixin pageTransitionSettings($opacity: 0.8, $height: 100vh, $transition: $transitionSettings, $filter: blur(12px), $background: $black) {

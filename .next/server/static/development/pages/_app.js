@@ -2129,10 +2129,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _loadable_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @loadable/component */ "@loadable/component");
 /* harmony import */ var _loadable_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_loadable_component__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var next_page_transitions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next-page-transitions */ "next-page-transitions");
-/* harmony import */ var next_page_transitions__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_page_transitions__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _styles_base_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/base.scss */ "./styles/base.scss");
-/* harmony import */ var _styles_base_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_base_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _styles_base_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/base.scss */ "./styles/base.scss");
+/* harmony import */ var _styles_base_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_base_scss__WEBPACK_IMPORTED_MODULE_5__);
 
 var _jsxFileName = "/Users/tank/git/Portfolio/next-portfolio/pages/_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -2141,8 +2139,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 const Nav = _loadable_component__WEBPACK_IMPORTED_MODULE_4___default()(() => __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../components/Nav */ "./components/Nav.jsx"))); // const Footer = loadable(() => import('../components/Footer'));
-
-const Loading = _loadable_component__WEBPACK_IMPORTED_MODULE_4___default()(() => __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../components/Loading */ "./components/Loading.jsx")));
+// const Loading = loadable(() => import('../components/Loading'));
+// import { PageTransition } from "next-page-transitions";
 
  // The progress spinner is hurting the snappiness of the transitions
 // import NProgress from "nprogress";
@@ -2166,8 +2164,8 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_3___default.a {
       Component,
       pageProps,
       router
-    } = this.props;
-    const timeout = 400;
+    } = this.props; // const timeout = 400;
+
     return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
       __source: {
         fileName: _jsxFileName,
@@ -2195,35 +2193,14 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_3___default.a {
         lineNumber: 46
       },
       __self: this
-    })), __jsx(next_page_transitions__WEBPACK_IMPORTED_MODULE_5__["PageTransition"], {
-      timeout: timeout,
-      classNames: "page-transition",
-      loadingClassNames: "spinner-icon",
-      loadingComponent: __jsx(Loading, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        },
-        __self: this
-      }),
-      loadingDelay: 500,
-      loadingTimeout: {
-        enter: timeout,
-        exit: 0
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+    })), __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
       key: router.route,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 59
       },
       __self: this
-    }))));
+    })));
   }
 
 } // Wraps all components in the tree with the data provider
@@ -2372,17 +2349,6 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/weak-map");
-
-/***/ }),
-
-/***/ "next-page-transitions":
-/*!****************************************!*\
-  !*** external "next-page-transitions" ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next-page-transitions");
 
 /***/ }),
 

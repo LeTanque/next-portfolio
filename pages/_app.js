@@ -5,9 +5,9 @@ import loadable from '@loadable/component';
 
 const Nav = loadable(() => import('../components/Nav'));
 // const Footer = loadable(() => import('../components/Footer'));
-const Loading = loadable(() => import('../components/Loading'));
+// const Loading = loadable(() => import('../components/Loading'));
 
-import { PageTransition } from "next-page-transitions";
+// import { PageTransition } from "next-page-transitions";
 
 import "../styles/base.scss";
 
@@ -33,7 +33,7 @@ export default class MyApp extends App {
 
     render() {
         const { Component, pageProps, router } = this.props;
-        const timeout = 400;
+        // const timeout = 400;
 
         return (
             <>
@@ -45,19 +45,19 @@ export default class MyApp extends App {
 
                 <Nav {...pageProps} route={router.route} />
 
-                <PageTransition
+                {/* <PageTransition
                     timeout={timeout}
                     classNames="page-transition"
                     loadingClassNames="spinner-icon"
                     loadingComponent={<Loading />}
-                    loadingDelay={500}
+                    loadingDelay={0}
                     loadingTimeout={{
                         enter: timeout,
                         exit: 0,
                     }}
-                >
+                > */}
                     <Component {...pageProps} key={router.route} />
-                </PageTransition>
+                {/* </PageTransition> */}
 
 
 

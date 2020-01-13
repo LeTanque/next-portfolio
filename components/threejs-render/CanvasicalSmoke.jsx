@@ -35,10 +35,6 @@ const Lighting = () => {
         light.current.position.set( mouse.x / 20, -mouse.y / 20, 60 )
     });
 
-    console.log('mouse.x / 20 --> ', mouse.x);
-
-    console.log('light --> ', light);
-
     return (
         <>
             {/* <pointLight 
@@ -101,15 +97,14 @@ const SmokePuff = ({ geometry, material }) => {
         let slowRotation = ((clock.elapsedTime * (0.017)) * randomFactor) + xFactor;  // starts at ~0.0001 + xFactor and goes slow
         let slowGrowth = (Math.tanh(clock.elapsedTime / 18) + 3);
 
+        smokePuffRef.current.rotation.z = slowRotation * -1;
         smokePuffRef.current.scale.set(slowGrowth, slowGrowth, 2);
-        smokePuffRef.current.rotation.z = slowRotation;
         smokePuffRef.current.position.set(
             xFactor * factor,
             yFactor * factor,
             zFactor
         );
     });
-
     return <mesh  ref={smokePuffRef} material={material} geometry={geometry} />;
 }
 
@@ -118,16 +113,13 @@ const GenerateSmoke = () => {
     const [ materialRef, material ] = useResource();
     const url = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Smoke-Element.png';
     const texture = useMemo(() => new THREE.TextureLoader().load(url), [url]);
-    
+
     return (
         <>
-            
-
             <planeGeometry 
                 ref={geometryRef} 
                 attach="geometry"   
                 args={[200, 200]}
-                
             />
             <meshLambertMaterial 
                 ref={materialRef}
@@ -139,13 +131,15 @@ const GenerateSmoke = () => {
                 <primitive attach="map" object={texture} />
             </meshLambertMaterial>
 
-            {geometry && new Array(33).fill().map((_, index) => (
-                <SmokePuff
-                    key={index}
-                    material={material}
-                    geometry={geometry}
-                />
-            ))}
+            {geometry && new Array(20).fill().map((_, index) => {
+                return (
+                    <SmokePuff
+                        key={index}
+                        material={material}
+                        geometry={geometry}
+                    />
+                )
+            })}
         </>
     );
 }
@@ -167,7 +161,6 @@ const CanvasicalSmoke = () => {
             >
                 <Lighting />
                 <GenerateSmoke />
-                {/* <Text opacity={0.9}  color="black" fontSize={150} ></Text> */}
             </Canvas>
             <TextLoop  />
         </>

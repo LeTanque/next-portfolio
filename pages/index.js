@@ -1,30 +1,30 @@
 import ProgressiveImage from "react-progressive-image-loading";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 
 
-const Index = props => {
-    const [ state, setState ] = useState({ loaded: false })
+const Index = () => {
+    // const [ state, setState ] = useState({ loaded: false })
     const scrollerClassNames = ["scroller-top", "scroller-middle", "scroller-bottom"];
     
     
-    useEffect(() => {
-        setTimeout(() => {
-            props.pageTransitionReadyToEnter()
-            setState({ loaded: true })
-          }, 2000)
-    }, [])
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         props.pageTransitionReadyToEnter()
+    //         setState({ loaded: true })
+    //       }, 2000)
+    // }, [])
 
 
-    if (!state.loaded) return null;
+    // if (!state.loaded) return null;
 
     return (
         <>
 
             <ProgressiveImage
                 preview="/static/matthew-ronder-seid-small.jpg"
-                src="/static/matthew-ronder-seid-xYd99V3S5aI-unsplash.jpg"
-                transitionTime={400}
+                src="/static/matthew-ronder-seid-xYd99V3S5aI-unsplash-medium.jpg"
+                transitionTime={200}
                 transitionFunction="ease"
                 render={(src, style) => (
                     <section className="section__index" style={Object.assign(style, { backgroundImage: `url(${src})` })} >

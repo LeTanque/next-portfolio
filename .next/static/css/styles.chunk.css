@@ -348,7 +348,7 @@ input[type="number"] {
     transform: rotate(360deg); } }
 
 .page-transition-enter {
-  transition: height ease-in-out 400ms, filter ease-in 500ms;
+  transition: height ease-in-out 800ms, filter ease-in 800ms;
   filter: blur(12px);
   -webkit-filter: blur(12px); }
   .page-transition-enter::after {
@@ -364,12 +364,12 @@ input[type="number"] {
     opacity: 0.8;
     filter: blur(12px);
     -webkit-filter: blur(12px);
-    transition: height ease-in-out 400ms, filter ease-in 500ms;
+    transition: height ease-in-out 800ms, filter ease-in 800ms;
     content: "";
     z-index: 60; }
 
 .page-transition-enter-active {
-  transition: height ease-in-out 400ms, filter ease-in 500ms;
+  transition: height ease-in-out 800ms, filter ease-in 800ms;
   filter: blur(0px);
   -webkit-filter: blur(0px); }
   .page-transition-enter-active::after {
@@ -385,12 +385,12 @@ input[type="number"] {
     opacity: 0.8;
     filter: blur(0px);
     -webkit-filter: blur(0px);
-    transition: height ease-in-out 400ms, filter ease-in 500ms;
+    transition: height ease-in-out 800ms, filter ease-in 800ms;
     content: "";
     z-index: 60; }
 
 .page-transition-exit {
-  transition: height ease-in-out 400ms, filter ease-in 500ms;
+  transition: height ease-in-out 800ms, filter ease-in 800ms;
   filter: blur(0px);
   -webkit-filter: blur(0px); }
   .page-transition-exit::after {
@@ -406,12 +406,12 @@ input[type="number"] {
     opacity: 0.8;
     filter: blur(0px);
     -webkit-filter: blur(0px);
-    transition: height ease-in-out 400ms, filter ease-in 500ms;
+    transition: height ease-in-out 800ms, filter ease-in 800ms;
     content: "";
     z-index: 60; }
 
 .page-transition-exit-active {
-  transition: height ease-in-out 400ms, filter ease-in 500ms;
+  transition: height ease-in-out 800ms, filter ease-in 800ms;
   filter: blur(4px);
   -webkit-filter: blur(4px); }
   .page-transition-exit-active::after {
@@ -427,7 +427,7 @@ input[type="number"] {
     opacity: 0.8;
     filter: blur(4px);
     -webkit-filter: blur(4px);
-    transition: height ease-in-out 400ms, filter ease-in 500ms;
+    transition: height ease-in-out 800ms, filter ease-in 800ms;
     content: "";
     z-index: 60; }
 
