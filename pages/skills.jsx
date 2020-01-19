@@ -2,6 +2,7 @@ import loadable from '@loadable/component';
 import { useState, useEffect } from 'react';
 const CanvasicalSmoke = loadable(() => import('../components/threejs-render/CanvasicalSmoke'));
 const TextLoop = loadable(() => import('../components/TextLoop'));
+const Posts = loadable(() => import('../components/Posts'));
 
 
 const Skills = () => {
@@ -22,16 +23,7 @@ const Skills = () => {
 
             <main className="main__skills-body">
                 <TextLoop  />
-                <div className="block__skills-bottom">
-                    <div className="block__level tint" >
-                        <h2 >Hello, friend.</h2>
-                        <p className="p__text-block" >TOP BLOCK ------------------- </p>
-                        <p className="p__text-block" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit.</p>
-                        <p className="p__text-block" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit.</p>
-                        <p className="p__text-block" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit.</p>
-                        <p className="p__text-block" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit.</p>
-                    </div>
-                </div>
+                <Posts />
             </main>
         </section>
     );

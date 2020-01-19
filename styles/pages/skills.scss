@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 .section__skills {
     width: 100%;
     height: 100vh;
@@ -24,44 +19,6 @@
         height: 100%;
         width: 100%;
         top: 20vh;
-        .block__skills-bottom {
-            z-index: 20;
-            width: 100%;
-            bottom: 0;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            p.p__text-block {
-                width: 100%;
-            }
-            .block__level {
-                width: calc(100% - 20px);
-                max-width: 800px;
-                padding: 20px 0;
-                position: relative;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                text-align: left;
-                padding: 20px 50px;
-                h2 {
-                    text-align: left;
-                    width: 100%;
-                }
-            }
-            .block__level.tint {
-                &:after {
-                    content: '';
-                    background: linear-gradient(177deg, rgba($black, 0) 15%, rgba($black, 0.9) 97%);
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    position: absolute;
-                    z-index: -2;
-                }
-            }
-        }
     }
 }
 

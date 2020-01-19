@@ -267,6 +267,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 const CanvasicalSmoke = _loadable_component__WEBPACK_IMPORTED_MODULE_8___default()(() => __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../components/threejs-render/CanvasicalSmoke */ "./components/threejs-render/CanvasicalSmoke.jsx")));
 const TextLoop = _loadable_component__WEBPACK_IMPORTED_MODULE_8___default()(() => __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../components/TextLoop */ "./components/TextLoop.jsx")));
+const Posts = _loadable_component__WEBPACK_IMPORTED_MODULE_8___default()(() => __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../components/Posts */ "./components/Posts.jsx")));
 
 const Skills = () => {
   const {
@@ -288,85 +289,36 @@ const Skills = () => {
     className: "section__skills",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: undefined
   }, canvas.load ? __jsx(CanvasicalSmoke, {
     canvas: canvas,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 21
     },
     __self: undefined
   }) : null, __jsx("main", {
     className: "main__skills-body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 24
     },
     __self: undefined
   }, __jsx(TextLoop, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "block__skills-bottom",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 25
     },
     __self: undefined
-  }, __jsx("div", {
-    className: "block__level tint",
+  }), __jsx(Posts, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26
     },
     __self: undefined
-  }, __jsx("h2", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: undefined
-  }, "Hello, friend."), __jsx("p", {
-    className: "p__text-block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
-  }, "TOP BLOCK ------------------- "), __jsx("p", {
-    className: "p__text-block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
-    className: "p__text-block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
-    className: "p__text-block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit."), __jsx("p", {
-    className: "p__text-block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo repudiandae libero totam dolor delectus nostrum fuga molestias accusantium temporibus, explicabo dignissimos, itaque tenetur magni officiis alias rem minus velit.")))));
+  })));
 };
 
 Skills.getInitialProps = async function () {
@@ -411,6 +363,17 @@ module.exports = require("@juggle/resize-observer");
 /***/ (function(module, exports) {
 
 module.exports = require("@loadable/component");
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
