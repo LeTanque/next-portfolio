@@ -1,7 +1,7 @@
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
-/******/ 	var installedModules = require('../../../ssr-module-cache.js');
+/******/ 	var installedModules = require('../../../../ssr-module-cache.js');
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -189,10 +189,10 @@ function _defineProperty(obj, key, value) {
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/admin/posts.jsx":
+/*!*******************************!*\
+  !*** ./pages/admin/posts.jsx ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -213,6 +213,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
 
 
 
@@ -220,7 +222,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/tank/git/Portfolio/next-portfolio/pages/index.js";
+var _jsxFileName = "/Users/tank/git/Portfolio/next-portfolio/pages/admin/posts.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
@@ -230,124 +232,123 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-const Index = () => {
-  const {
-    0: blockGreeting,
-    1: setBlockGreeting
-  } = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])({
-    display: false,
-    delay: 1200
-  }); // Fog delay and transition styling
 
+const PostsAdmin = () => {
   const {
-    0: fogScrollSettings
+    0: formState,
+    1: setFormState
   } = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])({
-    fadeIn: 3333,
-    delay: 600
+    title: "",
+    body: "",
+    author: "le Tanque"
   });
-  const foggyLettersClear = {
-    opacity: 0,
-    transition: `${fogScrollSettings.fadeIn}ms ease opacity 0ms`
-  };
-  const foggyLettersOpaque = {
-    opacity: 1,
-    transition: `${fogScrollSettings.fadeIn}ms ease opacity 0ms`
-  };
   const {
-    0: fogScrollStyle,
-    1: setFogScrollStyle
-  } = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])(_objectSpread({}, foggyLettersClear));
-  const fogScrollerClasses = ["scroller-top", "scroller-middle", "scroller-bottom"]; // loading trigger to turn fog on
+    0: feedback,
+    1: setFeedback
+  } = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])(null);
+
+  const pushPost = event => {
+    event.preventDefault();
+    axios__WEBPACK_IMPORTED_MODULE_8___default.a.post("https://next-portfolio-simple.herokuapp.com/api/posts", formState).then(response => setFeedback(`Post has been submitted: ${response}`)).catch(error => console.log("Post did not succeed\n", error));
+  }; // If the feedback hook changes, this useEffect timer starts, and resets the feedback
+
 
   Object(react__WEBPACK_IMPORTED_MODULE_7__["useEffect"])(() => {
     const timer = setTimeout(() => {
-      setFogScrollStyle(_objectSpread({}, foggyLettersOpaque));
-    }, fogScrollSettings.delay);
+      setFeedback(null);
+    }, 10000);
     return () => clearTimeout(timer);
-  }, []); // loading trigger to display block greeting
-
-  Object(react__WEBPACK_IMPORTED_MODULE_7__["useEffect"])(() => {
-    const timer = setTimeout(() => {
-      setBlockGreeting(_objectSpread({}, blockGreeting, {
-        display: true
-      }));
-    }, blockGreeting.delay);
-    return () => clearTimeout(timer);
-  }, []);
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("section", {
-    className: "section__index",
+  }, [feedback]);
+  return __jsx("section", {
+    className: "section__form",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }, __jsx("form", {
+    onSubmit: pushPost,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }, __jsx("input", {
+    name: "title",
+    type: "input-area",
+    placeholder: "Title (required)",
+    value: formState.title,
+    onChange: event => setFormState(_objectSpread({}, formState, {
+      [event.target.name]: event.target.value
+    })),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }), __jsx("textarea", {
+    name: "body",
+    type: "text",
+    placeholder: "Body (required)",
+    value: formState.body,
+    onChange: event => setFormState(_objectSpread({}, formState, {
+      [event.target.name]: event.target.value
+    })),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: undefined
+  }), __jsx("button", {
+    onClick: pushPost,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: undefined
+  }, "Submit")), feedback ? __jsx("h3", {
     style: {
-      backgroundImage: `url(/static/matthew-ronder-seid-xYd99V3S5aI-unsplash-medium.jpg)`
+      color: "purple"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 49
     },
     __self: undefined
-  }, __jsx("div", {
-    className: "block__greeting",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
-  }, blockGreeting.display ? __jsx("strong", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: undefined
-  }, "le\xA0"), "tanque") : null)), fogScrollerClasses.map((position, index) => __jsx("section", {
-    className: `section__scroller-container ${position}`,
-    key: index,
-    style: fogScrollStyle,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "block__scroller",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: undefined
-  }, __jsx("strong", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75
-    },
-    __self: undefined
-  }, "frank le tanque portfolio")))));
+  }, feedback) : null);
 };
 
-Index.getInitialProps = async function () {
+PostsAdmin.getInitialProps = async function () {
   return {
-    transitionType: 'none',
-    timeout: 0
+    transitionType: 'fade',
+    timeout: 300
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+/* harmony default export */ __webpack_exports__["default"] = (PostsAdmin);
 
 /***/ }),
 
-/***/ 5:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/***/ 3:
+/*!*************************************!*\
+  !*** multi ./pages/admin/posts.jsx ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/tank/git/Portfolio/next-portfolio/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/tank/git/Portfolio/next-portfolio/pages/admin/posts.jsx */"./pages/admin/posts.jsx");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
@@ -429,4 +430,4 @@ module.exports = require("react");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=posts.js.map

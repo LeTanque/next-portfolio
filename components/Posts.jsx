@@ -16,11 +16,11 @@ const Posts = () => {
             <div className="block__skills-bottom">
                 <div className="block__level tint" >
                     {data && data.map(post => (
-                        <React.Fragment key={post.id} >
+                        <div className="block--post-body" key={post.id} >
                             <h2>{post.title}</h2>
                             <p className="p__text-block" >{post.body}</p>
                             <i>{post.author}</i>
-                        </ React.Fragment>
+                        </ div>
                     ))}
                 </div>
             </div>

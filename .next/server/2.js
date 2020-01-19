@@ -42,7 +42,8 @@ const Posts = () => {
       lineNumber: 17
     },
     __self: undefined
-  }, data && data.map(post => __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+  }, data && data.map(post => __jsx("div", {
+    className: "block--post-body",
     key: post.id,
     __source: {
       fileName: _jsxFileName,
