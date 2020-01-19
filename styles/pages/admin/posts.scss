@@ -1,0 +1,21 @@
+
+
+.section__form {
+    width: 100%;
+    height: 100vh;
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        input, textarea {
+            width: 500px;
+        }
+        textarea {
+            height: 400px;
+        }
+    }
+}
+

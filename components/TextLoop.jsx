@@ -4,7 +4,7 @@ import TextLoop from "react-text-loop";
 
 
 const TextLooper = () => {
-    const namesOfSkills = [ "deadlines", "three.js", "passion", "teams", "friends", "open-source", "Raspberry Pi", "Arduino", "Next.js", "React", "Redux", "GraphQL", "Node.js", "JavaScript", "PostgreSQL", "Apache", "Docker", "Debian", "Linux", "Adobe Illustrator", "GIMP", "Sass", "Ripple", "Mapbox" ] 
+    const namesOfSkills = [ "Python", "deadlines", "three.js", "passion", "teams", "friends", "open-source", "Raspberry Pi", "Arduino", "Next.js", "React", "Redux", "GraphQL", "Node.js", "JavaScript", "PostgreSQL", "Apache", "Docker", "Debian", "Linux", "Adobe Illustrator", "GIMP", "Sass", "Ripple", "Mapbox" ] 
     const characters = "日アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンあいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん";
     const [ skillsWithCharacters, setSkillsWithCharacters ] = useState();
     

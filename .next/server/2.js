@@ -1,10 +1,10 @@
 exports.ids = [2];
 exports.modules = {
 
-/***/ "./components/TextLoop.jsx":
-/*!*********************************!*\
-  !*** ./components/TextLoop.jsx ***!
-  \*********************************/
+/***/ "./components/Posts.jsx":
+/*!******************************!*\
+  !*** ./components/Posts.jsx ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12,111 +12,66 @@ exports.modules = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var simple_icons_react_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simple-icons-react-component */ "simple-icons-react-component");
-/* harmony import */ var simple_icons_react_component__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(simple_icons_react_component__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_text_loop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-text-loop */ "react-text-loop");
-/* harmony import */ var react_text_loop__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_text_loop__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/tank/git/Portfolio/next-portfolio/components/TextLoop.jsx";
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/tank/git/Portfolio/next-portfolio/components/Posts.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-const TextLooper = () => {
-  const namesOfSkills = ["deadlines", "three.js", "passion", "teams", "friends", "open-source", "Raspberry Pi", "Arduino", "Next.js", "React", "Redux", "GraphQL", "Node.js", "JavaScript", "PostgreSQL", "Apache", "Docker", "Debian", "Linux", "Adobe Illustrator", "GIMP", "Sass", "Ripple", "Mapbox"];
-  const characters = "日アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンあいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん";
+const Posts = () => {
   const {
-    0: skillsWithCharacters,
-    1: setSkillsWithCharacters
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+    0: data,
+    1: setData
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (!skillsWithCharacters) {
-      const finalArray = getArrSkillsWithCharacters(namesOfSkills, characters);
-      setSkillsWithCharacters(finalArray);
-    }
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://next-portfolio-simple.herokuapp.com/api/posts").then(response => setData(response.data)).catch(error => console.log("Error GETting data ---> ", error));
   }, []);
-
-  const getRandomInt = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }; // const getNumberOfRandomCharacters = (number, chars) => {
-  //     if (!number) number = 9;
-  //     return chars.substr(getRandomInt(0, chars.length - number), number + 1)
-  // }
-
-
-  const getArrSkillsWithCharacters = (skills, chars) => {
-    let skillCharArr = [];
-
-    for (let i = 0; i <= 88; i++) {
-      let selectSkill = skills[getRandomInt(0, namesOfSkills.length - 1)]; // let createChars = getNumberOfRandomCharacters(selectSkill.length - 1, chars)
-
-      skillCharArr.push(selectSkill);
-    }
-
-    ;
-    return skillCharArr;
-  };
-
-  return __jsx("main", {
-    className: "main__textlooper header-major",
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+    className: "block__skills-bottom",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 16
     },
     __self: undefined
   }, __jsx("div", {
-    className: "block__title",
+    className: "block__level tint",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 17
     },
     __self: undefined
-  }, "I love building with\xA0"), skillsWithCharacters ? __jsx(react_text_loop__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    interval: [2000, 3000],
-    delay: 0,
-    mask: false,
-    fade: true,
-    noWrap: false,
-    springConfig: {
-      stiffness: 300,
-      damping: 53,
-      precision: 0.1
-    },
-    adjustingSpeed: 150,
-    className: "text-loop",
+  }, data && data.map(post => __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+    key: post.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 19
     },
     __self: undefined
-  }, skillsWithCharacters.map((entry, index) => __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-    key: index + "-" + entry,
+  }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 20
     },
     __self: undefined
-  }, __jsx("h3", {
+  }, post.title), __jsx("p", {
+    className: "p__text-block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 21
     },
     __self: undefined
-  }, skillsWithCharacters[index]), __jsx(simple_icons_react_component__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    name: entry,
-    className: "icon--skills",
+  }, post.body), __jsx("i", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 22
     },
     __self: undefined
-  })))) : null);
+  }, post.author))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (TextLooper);
+/* harmony default export */ __webpack_exports__["default"] = (Posts);
 
 /***/ })
 

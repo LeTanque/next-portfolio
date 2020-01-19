@@ -266,8 +266,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 const CanvasicalSmoke = _loadable_component__WEBPACK_IMPORTED_MODULE_8___default()(() => __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../components/threejs-render/CanvasicalSmoke */ "./components/threejs-render/CanvasicalSmoke.jsx")));
-const TextLoop = _loadable_component__WEBPACK_IMPORTED_MODULE_8___default()(() => __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../components/TextLoop */ "./components/TextLoop.jsx")));
-const Posts = _loadable_component__WEBPACK_IMPORTED_MODULE_8___default()(() => __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../components/Posts */ "./components/Posts.jsx")));
+const TextLoop = _loadable_component__WEBPACK_IMPORTED_MODULE_8___default()(() => __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../components/TextLoop */ "./components/TextLoop.jsx")));
+const Posts = _loadable_component__WEBPACK_IMPORTED_MODULE_8___default()(() => __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../components/Posts */ "./components/Posts.jsx")));
 
 const Skills = () => {
   const {
