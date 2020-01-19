@@ -60,8 +60,8 @@
 }
 
 @mixin foggyLetters() {
-    color: rgba(255, 255, 255, 0);
-    text-shadow: 0 0 88px $silver-lining;
+    color: rgba($white, 0.05);
+    text-shadow: 0 0 88px $coolgrey;
     user-select: none;
 }
 

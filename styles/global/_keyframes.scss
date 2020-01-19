@@ -24,10 +24,7 @@
 @keyframes spaceOut {
     0% {
         opacity: 0;
-        letter-spacing: -55px;
-    }
-    33% {
-        opacity: 0;
+        letter-spacing: -20px;
     }
     100% {
         opacity: 0.9;
@@ -59,7 +56,7 @@
         left: 50vw;
     }
     100% {
-        left: -150vw;
+        left: -100vw;
     }
 }
 

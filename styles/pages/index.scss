@@ -62,7 +62,7 @@
     transform: rotate(-25deg);
     .block__scroller {
         transform: translateX(-70%);
-        @include anima-bigScroll($runtime: 45s, $aniname: bigScrollTop);
+        @include anima-bigScroll($runtime: 55s, $aniname: bigScrollTop);
     }
 }
 
@@ -76,11 +76,11 @@
 }
 
 .section__scroller-container.scroller-bottom {
-    top: 45vh;
+    bottom: -10vh;
     transform: rotate(-6deg);
     .block__scroller {
         transform: translateX(-70%);
-        @include anima-bigScroll($runtime: 78s, $aniname: bigScrollBottom);
+        @include anima-bigScroll($runtime: 47s, $aniname: bigScrollBottom);
     }
 }
 
