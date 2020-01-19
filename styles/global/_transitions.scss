@@ -1,27 +1,23 @@
 // Variables
-$transitionSettings: height ease-in-out 800ms, filter ease-in 800ms;
+$heightTrans: height ease-in-out 800ms, filter ease-in 800ms;
+$fadeTrans: opacity ease-in-out 1800ms, filter ease-out 1250ms;
 
 // Mixin
-@mixin pageTransitionSettings($opacity: 0.8, $height: 100vh, $transition: $transitionSettings, $filter: blur(12px), $background: $black) {
+@mixin pageTransitionSettings($opacity: 0.8, $height: 100vh, $transition: $heightTrans, $filter: blur(12px), $background: $black) {
     transition: $transition;
     filter: $filter;
     -webkit-filter: $filter;
     &::after {
         width: 100vw;
         height: $height;
-        
         top: 0; bottom: 0;
         left: 0; right: 0;
-        
         position: absolute;
-        
         background-color: $background;
         background-attachment: fixed;
-        
         opacity: $opacity;
         filter: $filter;
         -webkit-filter: $filter;
-        
         transition: $transition;
         content: "";
         z-index: 60;
@@ -29,33 +25,31 @@ $transitionSettings: height ease-in-out 800ms, filter ease-in 800ms;
 }
 
 
-// Slide
+// /////////////////////   Slide   /////////////////////
 .page-transition-slide-enter {
-    @include pageTransitionSettings($height: 100vh);
-}
-
+    @include pageTransitionSettings($height: 100vh) }
 .page-transition-slide-enter-active {
-    @include pageTransitionSettings($height: 0vh, $filter: blur(0px));
-}
-
-// .page-transition-slide-enter-done {
-//     // opacity: 1;
-//     @include pageTransitionSettings($opacity: 1, $height: 100vh, $filter: blur(4px), $background: $black);
-// }
-
+    @include pageTransitionSettings($height: 0vh, $filter: blur(0px)) }
 .page-transition-slide-exit {
-    @include pageTransitionSettings($height: 0vh, $filter: blur(0px));
-}
-
+    @include pageTransitionSettings($height: 0vh, $filter: blur(0px)) }
 .page-transition-slide-exit-active {
-    @include pageTransitionSettings($height: 100vh, $filter: blur(4px));
-}
+    @include pageTransitionSettings($height: 100vh, $filter: blur(4px)) }
+
+// /////////////////////   Fade   /////////////////////
+.page-transition-fade-enter { 
+    @include pageTransitionSettings($opacity: 1, $height: 100vh, $transition: $fadeTrans) }
+.page-transition-fade-enter-active { 
+    @include pageTransitionSettings($opacity: 0, $height: 100vh, $filter: blur(0px), $transition: $fadeTrans) }
+.page-transition-fade-exit { 
+    @include pageTransitionSettings($opacity: 0, $height: 100vh, $filter: blur(0px), $transition: $fadeTrans) }
+.page-transition-fade-exit-active {
+    @include pageTransitionSettings($opacity: 1, $height: 100vh, $filter: blur(4px), $transition: $fadeTrans) }
 
 
 // None
 .page-transition-none-enter { opacity: 1 }
 .page-transition-none-enter-active { opacity: 1 }
-.page-transition-slide-enter-done { opacity: 1 }
+.page-transition-none-enter-done { opacity: 1 }
 .page-transition-none-exit { opacity: 1 }
 .page-transition-none-exit-active { opacity: 1 }
 

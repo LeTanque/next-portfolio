@@ -236,14 +236,14 @@ const Index = () => {
     1: setBlockGreeting
   } = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])({
     display: false,
-    delay: 2100
+    delay: 1200
   }); // Fog delay and transition styling
 
   const {
     0: fogScrollSettings
   } = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])({
-    fadeIn: 5555,
-    delay: 1300
+    fadeIn: 3333,
+    delay: 600
   });
   const foggyLettersClear = {
     opacity: 0,

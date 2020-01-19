@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 
 
 const Index = () => {
-    const [ blockGreeting, setBlockGreeting ] = useState({ display: false, delay: 2100 });
+    const [ blockGreeting, setBlockGreeting ] = useState({ display: false, delay: 1200 });
     
 
     // Fog delay and transition styling
-    const [ fogScrollSettings ] = useState({ fadeIn: 5555, delay: 1300 })
+    const [ fogScrollSettings ] = useState({ fadeIn: 3333, delay: 600 })
     const foggyLettersClear = {
         opacity: 0,
         transition: `${fogScrollSettings.fadeIn}ms ease opacity 0ms`,

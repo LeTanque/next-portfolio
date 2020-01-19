@@ -2455,15 +2455,15 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var Index = function Index() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_8__["useState"])({
     display: false,
-    delay: 2100
+    delay: 1200
   }),
       blockGreeting = _useState[0],
       setBlockGreeting = _useState[1]; // Fog delay and transition styling
 
 
   var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_8__["useState"])({
-    fadeIn: 5555,
-    delay: 1300
+    fadeIn: 3333,
+    delay: 600
   }),
       fogScrollSettings = _useState2[0];
 

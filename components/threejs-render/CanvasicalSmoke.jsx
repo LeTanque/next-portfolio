@@ -1,7 +1,8 @@
 import React, {
     useRef,
     useMemo,
-    useEffect
+    useEffect,
+    useState
 } from "react";
 import * as THREE from "three";
 import {
@@ -106,19 +107,28 @@ const GenerateSmoke = () => {
 
 // This is the canvas. It's the lowest level element in the three/webGl chain
 const CanvasicalSmoke = props => {
-    const { canvas, setCanvas } = props;
-    
+    const { canvas } = props;
+
+    // Smoke cloud fade in
+    const [ smokeSettings ] = useState({ transTime: 6000, delay: null });
+    const smokeClear = {
+        opacity: 0,
+        transition: `${smokeSettings.transTime}ms    cubic-bezier(0.82,-0.01, 0.4, 0.46)   opacity 0ms`,
+    };
+    const smokeOpaque = {
+        opacity: 1,
+        transition: `${smokeSettings.transTime}ms    cubic-bezier(0.82,-0.01, 0.4, 0.46)   opacity 0ms`,
+    };
+    const [ smokeStyle, setSmokeStyle ] = useState({ ...smokeClear });
+
     useEffect(() => {
-        if (!canvas.loaded) {
-            setCanvas({ loaded: true })
-        }
-    }, [props])
+        if (canvas.load) setSmokeStyle({ ...smokeOpaque })
+    }, [])
 
     return (
-        <>
             <Canvas
                 className="container block__three-container"
-                style={{ position: "fixed", width: "100vw", height: "100%", overflow: "hidden" }}
+                style={{position: "fixed", width: "100vw", height: "100%", overflow: "hidden", ...smokeStyle}}
                 camera={{
                     fov: 75,
                     aspect: 0.5,
@@ -127,18 +137,11 @@ const CanvasicalSmoke = props => {
                     position: [0, 0, 400]
                 }}
             >
-                {canvas.loaded ? (
-                    <>
-                        <Lighting />
-                        <GenerateSmoke />
-                    </>
-                ) : null}
+                <Lighting />
+                <GenerateSmoke />
             </Canvas>
-            
-        </>
     );
 };
 
 export default CanvasicalSmoke;
-
 
