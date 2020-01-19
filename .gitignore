@@ -3,3 +3,4 @@
 .env
 
 .next/cache
+.next/static
