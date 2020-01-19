@@ -26,7 +26,7 @@ const Index = () => {
             <ProgressiveImage
                 preview="/static/matthew-ronder-seid-xYd99V3S5aI-unsplash-small.jpg"
                 src="/static/matthew-ronder-seid-xYd99V3S5aI-unsplash-medium.jpg"
-                transitionTime={3333}
+                transitionTime={500}
                 transitionFunction="ease"
                 render={(src, style) => (
                     <section className="section__index" style={Object.assign(style, { backgroundImage: `url(${src})` })} >

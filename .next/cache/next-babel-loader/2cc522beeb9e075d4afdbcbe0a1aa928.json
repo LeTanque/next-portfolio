@@ -1,1 +1,0 @@
-{"ast":null,"code":"export default {\n  BOX: 'box'\n};","map":{"version":3,"sources":["/Users/tank/git/Portfolio/next-portfolio/components/dnd-dropbox/ItemTypes.js"],"names":["BOX"],"mappings":"AAAA,eAAe;AACXA,EAAAA,GAAG,EAAE;AADM,CAAf","sourcesContent":["export default {\n    BOX: 'box',\n}"]},"metadata":{},"sourceType":"module"}
