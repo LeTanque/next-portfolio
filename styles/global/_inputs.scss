@@ -1,34 +1,32 @@
 
 
-input {
+input, textarea {
     font-family: $body-font;
-    font-size: 1.6rem;
-    padding: 10px 15px;
-    outline: none;
-    height: 35px;
-    border-radius: 5px;
-    border: none;
+    font-size: 1.4rem;
+    padding: 5px 10px;
+    margin: 10px 0 0;
+
+    border-radius: 0px;
     border: 1px solid $mirage;
+
+    outline: rgba($fire, 0) double 0px;
+    transition: outline ease-out 300ms;
+    &:active, &:focus {
+        outline: rgba($fire, 0.5) auto 8px;
+        transition: outline ease-in-out 300ms;
+    }
 }
 
-textarea {
-    font-family: $body-font;
-    font-size: 1.6rem;
-    padding: 10px 15px;
-    margin: 10px 0 0;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid $mirage;
+input {
+    height: 35px;
 }
 
 select {
     font-family: $body-font;
-    font-size: 1.6rem;
-    border-radius: 5px;
+    font-size: 1.4rem;
+    border-radius: 0px;
     border: 1px solid $mirage;
 }
-
-
 
 
 input[type="number"]::-webkit-outer-spin-button,

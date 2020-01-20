@@ -85,3 +85,22 @@
 }
 
 
+.block__hidden-link {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    z-index: 10;
+    a {
+        opacity: 0.05;
+        color: $coolgrey;
+        cursor: unset;
+        svg {
+            font-size: 5rem;
+            @include smoothTransition();
+            &:hover {
+                color: $cosmic;
+                opacity: 0;
+            }
+        }
+    }
+}

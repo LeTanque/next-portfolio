@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { useState, useEffect } from "react";
-
-
+import { GiHidden } from "react-icons/gi";
 
 
 const Index = () => {
@@ -48,27 +48,6 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* <ProgressiveImage
-                preview="/static/matthew-ronder-seid-xYd99V3S5aI-unsplash-small.jpg"
-                src="/static/matthew-ronder-seid-xYd99V3S5aI-unsplash-medium.jpg"
-                transitionTime={500}
-                transitionFunction="ease"
-                render={(src, style) => (
-                    <section className="section__index" style={Object.assign(style, { backgroundImage: `url(${src})` })} >
-
-                        {style.filter === "blur(0px)" && !background.loaded && setBackground({ ...background, loaded: true })}
-
-                        {background.loaded && (
-                            <div className="block__greeting"  >
-                                <strong>
-                                    <span>le&nbsp;</span>tanque
-                                </strong>
-                            </div>
-                        )}
-                    </section>
-                )}
-            /> */}
-
             {fogScrollerClasses.map((position, index) => (
                 <section className={`section__scroller-container ${position}`} key={index}  style={fogScrollStyle}  >
                     <div className="block__scroller">
@@ -76,6 +55,14 @@ const Index = () => {
                     </div>
                 </section>
             ))}
+
+            <div className="block__hidden-link">
+                <Link href={"/admin"}>
+                    <a>
+                        <GiHidden />
+                    </a>
+                </Link>
+            </div>
 
         </>
     )

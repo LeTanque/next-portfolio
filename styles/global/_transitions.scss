@@ -1,6 +1,7 @@
 // Variables
 $heightTrans: height ease-in-out 800ms, filter ease-in 800ms;
 $fadeTrans: opacity ease-in-out 1800ms, filter ease-out 1250ms;
+$fadeFastTrans: opacity ease-in-out 300ms, filter ease-out 300ms;
 
 // Mixin
 @mixin pageTransitionSettings($opacity: 0.8, $height: 100vh, $transition: $heightTrans, $filter: blur(12px), $background: $black) {
@@ -24,16 +25,15 @@ $fadeTrans: opacity ease-in-out 1800ms, filter ease-out 1250ms;
     }
 }
 
-
 // /////////////////////   Slide   /////////////////////
 .page-transition-slide-enter {
-    @include pageTransitionSettings($height: 100vh) }
+    @include pageTransitionSettings($opacity: 0.75, $height: 100vh, $transition: $heightTrans) }
 .page-transition-slide-enter-active {
-    @include pageTransitionSettings($height: 0vh, $filter: blur(0px)) }
+    @include pageTransitionSettings($opacity: 0.75, $height: 0vh, $filter: blur(0px), $transition: $heightTrans) }
 .page-transition-slide-exit {
-    @include pageTransitionSettings($height: 0vh, $filter: blur(0px)) }
+    @include pageTransitionSettings($opacity: 0.75, $height: 0vh, $filter: blur(0px), $transition: $heightTrans) }
 .page-transition-slide-exit-active {
-    @include pageTransitionSettings($height: 100vh, $filter: blur(4px)) }
+    @include pageTransitionSettings($opacity: 0.75, $height: 100vh, $filter: blur(4px), $transition: $heightTrans) }
 
 // /////////////////////   Fade   /////////////////////
 .page-transition-fade-enter { 
@@ -44,6 +44,16 @@ $fadeTrans: opacity ease-in-out 1800ms, filter ease-out 1250ms;
     @include pageTransitionSettings($opacity: 0, $height: 100vh, $filter: blur(0px), $transition: $fadeTrans) }
 .page-transition-fade-exit-active {
     @include pageTransitionSettings($opacity: 1, $height: 100vh, $filter: blur(4px), $transition: $fadeTrans) }
+
+    // /////////////////////   FadeFast   /////////////////////
+.page-transition-fadefast-enter { 
+    @include pageTransitionSettings($opacity: 1, $height: 100vh, $transition: $fadeFastTrans) }
+.page-transition-fadefast-enter-active { 
+    @include pageTransitionSettings($opacity: 0, $height: 100vh, $filter: blur(0px), $transition: $fadeFastTrans) }
+.page-transition-fadefast-exit { 
+    @include pageTransitionSettings($opacity: 0, $height: 100vh, $filter: blur(0px), $transition: $fadeFastTrans) }
+.page-transition-fadefast-exit-active {
+    @include pageTransitionSettings($opacity: 1, $height: 100vh, $filter: blur(4px), $transition: $fadeFastTrans) }
 
 
 // None

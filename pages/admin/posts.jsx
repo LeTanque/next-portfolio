@@ -14,8 +14,11 @@ const PostsAdmin = () => {
     const pushPost = event => {
         event.preventDefault()
         axios.post("https://next-portfolio-simple.herokuapp.com/api/posts", formState)
-        .then(response => setFeedback(`Post has been submitted: ${response}`))
-        .catch(error => console.log("Post did not succeed\n", error))
+        .then(response => {
+            setFeedback(`Post has been submitted: ${response}`)
+            setFormState({ ...formState, title: "", body: "" })
+        })
+        .catch(error => setFeedback(`Sorry, post did not succeed. Please try again.`))
     };
 
     // If the feedback hook changes, this useEffect timer starts, and resets the feedback
@@ -44,17 +47,17 @@ const PostsAdmin = () => {
                     onChange={event => setFormState({...formState, [event.target.name]: event.target.value })}
                 />
                 <button onClick={pushPost}>Submit</button>
+                {feedback ? (
+                    <small>{feedback}</small>
+                ) : null}
             </form >
-            {feedback ? (
-                <h3 style={{ color: "purple" }}>{feedback}</h3>
-            ) : null}
         </section>
     );
 };
 
 PostsAdmin.getInitialProps = async function () {
     return { 
-        transitionType: 'fade',
+        transitionType: 'fadefast',
         timeout: 300
     }
 }
