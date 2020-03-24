@@ -6,7 +6,7 @@ const Posts = loadable(() => import('../components/Posts'));
 
 
 const Skills = () => {
-    const [ canvas, setCanvas ] = useState({ load: false, delay: 150 });
+    const [ canvas, setCanvas ] = useState({ load: false, delay: 10 });
 
     useEffect(() => {
         const timerToLoadCanvas = setTimeout(() => {
@@ -31,8 +31,8 @@ const Skills = () => {
 
 Skills.getInitialProps = async function () {
     return { 
-        transitionType: 'fade',
-        timeout: 1800
+        transitionType: 'fadefast',
+        timeout: 300
     }
 }
 

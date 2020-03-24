@@ -110,7 +110,7 @@ const CanvasicalSmoke = props => {
     const { canvas } = props;
 
     // Smoke cloud fade in
-    const [ smokeSettings ] = useState({ transTime: 6000, delay: null });
+    const [ smokeSettings ] = useState({ transTime: 600, delay: null });
     const smokeClear = {
         opacity: 0,
         transition: `${smokeSettings.transTime}ms    cubic-bezier(0.82,-0.01, 0.4, 0.46)   opacity 0ms`,
@@ -128,7 +128,7 @@ const CanvasicalSmoke = props => {
     return (
             <Canvas
                 className="container block__three-container"
-                style={{position: "fixed", width: "100vw", height: "100%", overflow: "hidden", ...smokeStyle}}
+                style={{ position: "fixed", width: "100vw", height: "100%", overflow: "hidden", ...smokeStyle }}
                 camera={{
                     fov: 75,
                     aspect: 0.5,

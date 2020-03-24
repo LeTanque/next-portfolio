@@ -33,7 +33,6 @@ export default class MyApp extends App {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
 
-
                 <Nav 
                     route={router.route} 
                 />
@@ -57,4 +56,3 @@ export default class MyApp extends App {
         );
     }
 }
-
