@@ -23,7 +23,7 @@
   "dependencies": {
     "@loadable/component": "^5.11.0",
     "@zeit/next-sass": "^1.0.1",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "immutability-helper": "^3.0.1",
     "isomorphic-unfetch": "^3.0.0",
